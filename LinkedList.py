@@ -79,7 +79,19 @@ class LinkedList:
             print(currentNode.value)
             currentNode = currentNode.next
 
-        
+    def reverse(self):
+        currentNode = self.head
+        previousNode = None
+        while True:
+            if currentNode == None:
+                break
+            nextNode = currentNode.next
+            currentNode.next = previousNode
+            previousNode = currentNode
+            currentNode = nextNode
+        self.head = previousNode
+
+
 list = LinkedList()
 list.append(5)
 list.prepend(10)
@@ -88,7 +100,8 @@ list.append(40)
 list.insert(3,140)
 list.remove(1)
 list.printList()
-print(list.length)
+# list.reverse()
+# list.printList()
 
 
 
